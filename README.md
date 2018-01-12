@@ -1,1 +1,1 @@
-# cut-image
+# cut-image-component
