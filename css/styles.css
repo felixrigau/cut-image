@@ -51,3 +51,13 @@
   flex-direction:column;
   width: 200px;
 }
+.resize{
+  width: 10px;
+  height: 10px;
+  background-color: #f95111;
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 5px;
+  cursor: se-resize;
+}
