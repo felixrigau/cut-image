@@ -39,6 +39,7 @@
 }
 .cut-square{
   background-repeat: no-repeat;
+  cursor: all-scroll;
   width: 200px;
   height: 200px;
   position: relative;
