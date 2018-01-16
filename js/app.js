@@ -45,7 +45,9 @@ var component = {
             sy = parseInt(cutSquare.style.top.replace('px','')),
             sWidth = cutSquare.clientWidth,
             sHeight = cutSquare.clientHeight;
-        context.drawImage(image,sx,sy,sWidth,sHeight);
+            canvas.width = component.dimensions.square.width;
+            canvas.height = component.dimensions.square.height;
+        context.drawImage(image,sx,sy,sWidth,sHeight,0,0,sWidth,sHeight);
         console.log(canvas.toDataURL('image/png'));
       });
     }
