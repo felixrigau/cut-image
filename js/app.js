@@ -22,8 +22,6 @@ var component = {
             square.style.backgroundPositionX=(0+event.movementX*-1).toString()+'px';
             square.style.backgroundPositionY=(0+event.movementY*-1).toString()+'px';
           }
-          console.log(e.buttons);
-          console.log(event.movementX,event.movementY);
         }
       });
     }
@@ -44,7 +42,10 @@ var component = {
             canvas.width = component.dimensions.square.width;
             canvas.height = component.dimensions.square.height;
         context.drawImage(image,sx,sy,sWidth,sHeight,0,0,sWidth,sHeight);
-        console.log(canvas.toDataURL('image/png'));
+        var newImage = new Image();
+        newImage.src = canvas.toDataURL('image/png');
+        var croppedImageContainer = document.querySelector('.cropped-images');
+        croppedImageContainer.appendChild(newImage);
       });
     }
   }
