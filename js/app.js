@@ -1,7 +1,9 @@
 var component = {
   dimensions:{
-    width:null,
-    height:null,
+    square:{
+      width:200,
+      height:200,
+    },
   },
 
   events:{
@@ -35,7 +37,16 @@ var component = {
     cut:function () {
       var button = document.querySelector('.cut');
       button.addEventListener('click',function () {
-        
+        var image = document.querySelector('.original-image'),
+            cutSquare = document.querySelector('.cut-square'),
+            canvas = document.createElement('canvas'),
+            context = canvas.getContext('2d'),
+            sx = parseInt(cutSquare.style.left.replace('px','')),
+            sy = parseInt(cutSquare.style.top.replace('px','')),
+            sWidth = cutSquare.clientWidth,
+            sHeight = cutSquare.clientHeight;
+        context.drawImage(image,sx,sy,sWidth,sHeight);
+        console.log(canvas.toDataURL('image/png'));
       });
     }
   }
