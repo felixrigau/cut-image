@@ -24,6 +24,15 @@ var component = {
           }
         }
       });
+    },
+    
+    resizeCutSquare:function () {
+      var button = document.querySelector('.resize');
+      button.addEventListener('mousemove',function (e) {
+        if (e.buttons === 1 && e.shiftKey === true) {
+          console.log(e)
+        }
+      });
     }
   },
 
@@ -53,5 +62,6 @@ var component = {
 
 (function () {
     component.events.moveCutSquare();
+    component.events.resizeCutSquare();
     component.actions.cut();
 })();
