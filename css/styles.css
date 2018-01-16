@@ -1,5 +1,9 @@
 .general-container{
   display: flex;
+  justify-content: center;
+}
+.image-container{
+  position: absolute;
 }
 .image{
   background-image: url(../images/contador.jpg);
@@ -16,6 +20,7 @@
   height: 100%;
 }
 .cut-square{
+  background-repeat: no-repeat;
   width: 200px;
   height: 200px;
   position: relative;
