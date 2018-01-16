@@ -3,7 +3,7 @@ var component = {
     width:null,
     height:null,
   },
-  
+
   events:{
     moveCutSquare:function () {
       var square = document.querySelector('.cut-square');
@@ -28,13 +28,14 @@ var component = {
           console.log(event.movementX,event.movementY);
         }
       });
-    },
+    }
+  },
 
-    getImageDimension:function () {
-      var image = document.querySelector('.original-image');
-      image.addEventListener('load',function () {
-        component.dimensions.width = image.width;
-        component.dimensions.height = image.height;
+  actions:{
+    cut:function () {
+      var button = document.querySelector('.cut');
+      button.addEventListener('click',function () {
+        
       });
     }
   }
@@ -42,4 +43,5 @@ var component = {
 
 (function () {
     component.events.moveCutSquare();
+    component.actions.cut();
 })();
