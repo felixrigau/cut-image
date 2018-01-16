@@ -9,8 +9,6 @@ var component = {
   events:{
     moveCutSquare:function () {
       var square = document.querySelector('.cut-square');
-      var clientX = document.querySelector('.clientX');
-      var clientY = document.querySelector('.clientY');
       square.addEventListener('mousemove',function (e) {
         if (e.buttons === 1) {
           if (square.style.left && square.style.top && square.style.backgroundPositionX && square.style.backgroundPositionY) {
@@ -24,8 +22,6 @@ var component = {
             square.style.backgroundPositionX=(0+event.movementX*-1).toString()+'px';
             square.style.backgroundPositionY=(0+event.movementY*-1).toString()+'px';
           }
-          clientX.innerText = parseInt(clientX.innerText)+event.movementX;
-          clientY.innerText = parseInt(clientY.innerText)+event.movementY;
           console.log(e.buttons);
           console.log(event.movementX,event.movementY);
         }
