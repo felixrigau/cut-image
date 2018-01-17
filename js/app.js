@@ -31,6 +31,8 @@ var component = {
       var square = document.querySelector('.cut-square');
       button.addEventListener('mousemove',function (e) {
         if (e.buttons === 1 && e.shiftKey === true) {
+          component.dimensions.square.width += event.movementX;
+          component.dimensions.square.height += event.movementY;
           if (square.style.width && square.style.height) {
             square.style.width=(parseInt(square.style.width)+event.movementX).toString()+'px';
             square.style.height=(parseInt(square.style.height)+event.movementY).toString()+'px';
