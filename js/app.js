@@ -10,7 +10,7 @@ var component = {
     moveCutSquare:function () {
       var square = document.querySelector('.cut-square');
       square.addEventListener('mousemove',function (e) {
-        if (e.buttons === 1) {
+        if (e.buttons === 1 && !e.shiftKey) {
           if (square.style.left && square.style.top && square.style.backgroundPositionX && square.style.backgroundPositionY) {
             square.style.left=(parseInt(square.style.left)+event.movementX).toString()+'px';
             square.style.top=(parseInt(square.style.top)+event.movementY).toString()+'px';
@@ -28,9 +28,18 @@ var component = {
     
     resizeCutSquare:function () {
       var button = document.querySelector('.resize');
+      var square = document.querySelector('.cut-square');
       button.addEventListener('mousemove',function (e) {
         if (e.buttons === 1 && e.shiftKey === true) {
-          console.log(e)
+          if (square.style.width && square.style.height) {
+            square.style.width=(parseInt(square.style.width)+event.movementX).toString()+'px';
+            square.style.height=(parseInt(square.style.height)+event.movementY).toString()+'px';
+            console.log("X:"+event.movementX," Y:"+event.movementY)
+          }else {
+            square.style.width=(component.dimensions.square.width+event.movementX).toString()+'px';
+            square.style.height=(component.dimensions.square.width+event.movementY).toString()+'px';
+            console.log("X:"+event.movementX," Y:"+event.movementY)
+          }
         }
       });
     }
